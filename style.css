@@ -1,0 +1,261 @@
+body {
+    background-color: #A02334;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 10px; /* Add some padding to the body to avoid touching the edges */
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 2.5%;
+
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.header {
+    font-size: 28px;
+    color: #FFEEAD; /* Adjust color as needed */
+    text-align: center;
+    margin-top: 10px;
+    overflow: hidden; /* Ensures the content is hidden before animation */
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: 3px solid #FFEEAD; /* Creates a typing effect */
+    width: auto; /* Set width to auto */
+    animation: typing 4s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Start with no width */
+    }
+    to {
+        width: 100%; /* End with full width */
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #FFEEAD; /* Match with text color */
+    }
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    color: #2e2d31;
+    background: #FFAD60;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.temporary_text {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 6px 12px;
+    color: #f8f8f8;
+}
+
+.card_content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: #FFEEAD;
+    border-top-left-radius: 20px;
+    transform: translateY(150px);
+    transition: transform 0.25s;
+}
+
+.card:hover .card_content {
+    transform: translateY(0);
+}
+
+.card_description {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 90%;
+}
+
+.card:hover .card_description {
+    opacity: 1;
+}
+
+.card_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card_subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.img1 {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        font-size: 20px; /* Adjust font size */
+        word-wrap: break-word; /* Ensure long words wrap */
+        text-align: center; /* Center align text */
+        padding: 10px; /* Add padding for better spacing */
+    }
+    
+    .card {
+        height: 200px; /* Adjust card height as needed */
+    }
+    
+    .card_title {
+        font-size: 25px; /* Smaller title font size */
+        
+    }
+
+    .card_subtitle {
+        font-size: 16px; /* Smaller subtitle font size */
+    }
+
+    .temporary_text {
+        font-size: 20px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        padding: 0 5px; /* Reduce padding on smaller screens */
+    }
+
+    .card {
+        height: auto; /* Auto height for better content fit */
+    }
+}
+
+.footer {
+    background-color: #921A40; /* Darker background for a professional look */
+    color: #FFFFFF; /* White text for contrast */
+    text-align: center;
+    padding: 30px 20px; /* More padding for a spacious feel */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: 100%; /* Ensure footer takes full width */
+    position: relative; /* Ensure proper stacking context */
+    margin-top: 3%;
+    bottom: 0; /* Aligns the footer at the bottom */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Optional: limit max width for larger screens */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.facebook-logo {
+    width: 40px; /* Slightly larger for visibility */
+    height: auto;
+    margin-bottom: 10px; /* Space below logo */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.facebook-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+p {
+    margin: 5px 0; /* Add margin to paragraphs */
+    font-size: 16px; /* Slightly larger font size */
+}
+
+a {
+    color: #FFEEAD; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .facebook-logo {
+        width: 35px; /* Adjust logo size on mobile */
+    }
+
+    p {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+}
+
+
+
+/* script.js alert */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    color: white;
+}
+
+.modal-content {
+    background-color: #96CEB4;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Limit max width */
+    text-align: center; /* Center text */
+}
+
+.close {
+    color: white; /* Gray color */
+    float: right; /* Position the close button */
+    font-size: 28px; /* Font size */
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none;
+    cursor: pointer; /* Pointer cursor */
+}

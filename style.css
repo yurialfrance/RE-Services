@@ -159,6 +159,72 @@ body {
     }
 }
 
+
+/* clients */
+.clients {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.clients h2 {
+    font-size: 28px;
+    color: #FFEEAD;
+    margin-bottom: 30px;
+}
+
+.client-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.client-logos img {
+    max-width: 500px; /* Adjust the logo size */
+    border-radius: 45%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.client-logos img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.clients {
+    text-align: center;
+}
+
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-logos img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .client-logos {
+        justify-content: space-around;
+    }
+    
+    .client-logos img {
+        max-width: 100px;
+    }
+
+    /* Display 3 images per row */
+    .client-logos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+
 .footer {
     background-color: #921A40; /* Darker background for a professional look */
     color: #FFFFFF; /* White text for contrast */
